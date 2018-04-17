@@ -1,4 +1,4 @@
-import {Component} from 'react';
+import React, {Component} from 'react';
 import '../App.css';
 
 export default class BookItem extends Component {
@@ -7,7 +7,7 @@ export default class BookItem extends Component {
 			<li>
 				<div className="book">
 					<div className="book-top">
-						<div className="book-cover" style={{backgroundImage : `url(${props.image})`, ...props.style}}></div>
+						<div className="book-cover" style={{backgroundImage : `url(${this.props.image})`, ...this.props.style}}></div>
 						<div className="book-shelf-changer">
 							<select>
 								<option value="none" disabled>Move to...</option>
@@ -18,8 +18,8 @@ export default class BookItem extends Component {
 							</select>
 						</div>
 					</div>
-					<div className="book-title">{props.title}</div>
-					<div className="book-authors">{props.author}</div>
+					<div className="book-title">{this.props.title}</div>
+					<div className="book-authors">{this.props.author}</div>
 				</div>
 			</li>
 		);
