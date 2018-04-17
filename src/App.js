@@ -19,6 +19,7 @@ class BooksApp extends React.Component {
 			title: 'Currently Reading',
 			books: [
 				{
+					id: 1,
 					style: {
 						width: 128,
 						height: 193,
@@ -28,6 +29,7 @@ class BooksApp extends React.Component {
 					author: `Harper Lee`,
 				},
 				{
+					id: 2,
 					style: {
 						width: 128,
 						height: 193,
@@ -41,6 +43,7 @@ class BooksApp extends React.Component {
 		{
 			books: [
 				{
+					id: 3,
 					style: {
 						width: 128,
 						height: 188,
@@ -50,6 +53,7 @@ class BooksApp extends React.Component {
 					author: `David McCullough`,
 				},
 				{
+					id: 4,
 					style: {
 						width: 128,
 						height: 188,
@@ -64,6 +68,7 @@ class BooksApp extends React.Component {
 		{
 			books: [
 				{
+					id: 5,
 					style: {
 						width: 128,
 						height: 192,
@@ -73,6 +78,7 @@ class BooksApp extends React.Component {
 					author: `J.R.R. Tolkien`,
 				},
 				{
+					id: 6,
 					style: {
 						width: 128,
 						height: 174,
@@ -82,6 +88,7 @@ class BooksApp extends React.Component {
 					author: `Seuss`
 				},
 				{
+					id: 7,
 					style: {
 						width: 128,
 						height: 192,
