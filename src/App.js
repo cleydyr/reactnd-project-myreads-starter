@@ -7,7 +7,7 @@ const BookItem = props => (
 	<li>
 		<div className="book">
 			<div className="book-top">
-				<div className="book-cover" style={props.style}></div>
+				<div className="book-cover" style={{backgroundImage : `url(${props.image})`, ...props.style}}></div>
 				<div className="book-shelf-changer">
 					<select>
 						<option value="none" disabled>Move to...</option>
