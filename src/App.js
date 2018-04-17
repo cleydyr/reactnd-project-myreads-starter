@@ -3,19 +3,8 @@ import React from 'react'
 import './App.css'
 import Title from './components/Title';
 import BookItem from './components/BookItem';
+import Bookshelf from './components/Bookshelf';
 
-const Bookshelf = props => (
-	<div className="bookshelf">
-		<h2 className="bookshelf-title">props.title</h2>
-		<div className="bookshelf-books">
-			<ol className="books-grid">
-				{
-					props.books.map(book => (<BookItem {...book} key={book.id}/>))
-				}
-			</ol>
-		</div>
-	</div>
-);
 
 class BooksApp extends React.Component {
   state = {
