@@ -1,12 +1,7 @@
 import React from 'react'
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
-
-const Title = (props) => (
-	<div className="list-books-title">
-		<h1>{props.title}</h1>
-	</div>
-);
+import Title from './components/Title';
 
 class BooksApp extends React.Component {
   state = {
