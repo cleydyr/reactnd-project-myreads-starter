@@ -38,7 +38,7 @@ const Search = props => (
 
 const SearchButton = props => (
 	<div className="open-search">
-		<Link to="/search">Add a book</Link>
+		<Link to="/search">{props.title}</Link>
 	</div>
 );
 
@@ -148,7 +148,7 @@ class BooksApp extends React.Component {
 					<div className="list-books">
 						<Title title="My Reads"/>
 						<BookContent bookshelves={this.state.bookshelves} />
-						<SearchButton />
+						<SearchButton title="Add a book"/>
 					</div>
 				)}
 			/>
