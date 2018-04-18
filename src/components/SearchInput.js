@@ -14,7 +14,7 @@ export default class SearchInput extends Component {
 					However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
 					you don't find a specific author or title. Every search is limited by search terms.
 				*/}
-				<input type="text" placeholder={this.props.placeholder} onChange={this.props.onChange} value={this.props.query} />
+				<input type="text" placeholder={this.props.placeholder} onChange={({target}) => this.props.onChange(target.value)} value={this.props.query} />
 			</div>
 		);
 	}
