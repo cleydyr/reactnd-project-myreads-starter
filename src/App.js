@@ -118,7 +118,14 @@ class BooksApp extends React.Component {
 		return (
 		<div className="app">
 				<Route exact path="/search"
-					render={props => <Search route="/" placeholder="Search by title or author"/>}
+					render={props =>
+						<Search route="/"
+							placeholder="Search by title or author"
+							query={this.state.query}
+							onChange={this.handleQueryChange}
+							books={this.state.searchResults}
+						/>
+					}
 				/>
 				<Route exact path="/"
 					render={props => (
