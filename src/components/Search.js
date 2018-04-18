@@ -5,7 +5,7 @@ import SearchInput from './SearchInput';
 
 import '../App.css';
 
-export default class SearchButton extends Component {
+export default class Search extends Component {
 	render() {
 		return (
 			<div className="search-books">
