@@ -2,7 +2,6 @@ import React from 'react'
 // import * as BooksAPI from './BooksAPI'
 import './App.css'
 import Title from './components/Title';
-import Bookshelf from './components/Bookshelf';
 import BookContent from './components/BookContent';
 
 const CloseButton = props => (
