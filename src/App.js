@@ -27,7 +27,7 @@ const SearchInput = props => (
 const Search = props => (
 	<div className="search-books">
 		<div className="search-books-bar">
-			<CloseButton toPath={props.route} onClose={props.onClose}/>
+			<CloseButton toPath={props.route} />
 			<SearchInput onChange={props.onChange} value={props.query}/>
 		</div>
 		<div className="search-books-results">
