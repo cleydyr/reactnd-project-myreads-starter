@@ -7,7 +7,7 @@ import Bookshelf from './components/Bookshelf';
 const BookContent = props => (
 	<div className="list-books-content">
         <div>
-			{props.bookshelfs.map(bookshelf => <Bookshelf title={bookshelf.title} books={bookshelf.books} key={bookshelf.title}/>)}
+			{props.bookshelves.map(bookshelf => <Bookshelf title={bookshelf.title} books={bookshelf.books} key={bookshelf.title}/>)}
         </div>
     </div>
 );
@@ -21,7 +21,7 @@ class BooksApp extends React.Component {
      * pages, as well as provide a good URL they can bookmark and share.
      */
 	showSearchPage: false,
-	bookshelfs: [
+	bookshelves: [
 		{
 			title: 'Currently Reading',
 			books: [
@@ -137,7 +137,7 @@ class BooksApp extends React.Component {
         ) : (
           <div className="list-books">
             <Title title="My Reads"/>
-            <BookContent bookshelfs={this.state.bookshelfs} />
+            <BookContent bookshelves={this.state.bookshelves} />
             <div className="open-search">
               <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
             </div>
