@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 
 import SearchCloseButton from './SearchCloseButton';
 import SearchInput from './SearchInput';
+import BookItem from './BookItem';
 
 import '../App.css';
 
@@ -14,7 +15,16 @@ export default class Search extends Component {
 					<SearchInput placeholder={this.props.placeholder} onChange={this.props.onChange} value={this.props.query}/>
 				</div>
 				<div className="search-books-results">
-					<ol className="books-grid"></ol>
+					<ol className="books-grid">
+						{
+							this.props.books.map(book => (
+								<BookItem
+									image={book.imageLinks.smallThumbnail}
+									style={{width: 128, height: 193}}
+									{...book}
+									key={book.id}/>))
+						}
+					</ol>
 				</div>
 			</div>
 		);
