@@ -13,7 +13,7 @@ const Search = props => (
 	<div className="search-books">
 		<div className="search-books-bar">
 			<SearchCloseButton toPath={props.route} />
-			<SearchInput onChange={props.onChange} value={props.query}/>
+			<SearchInput placeholder={props.placeholder} onChange={props.onChange} value={props.query}/>
 		</div>
 		<div className="search-books-results">
 			<ol className="books-grid"></ol>
@@ -126,7 +126,7 @@ class BooksApp extends React.Component {
     return (
       <div className="app">
 			<Route exact path="/search"
-				render={props => <Search route="/"/>}
+				render={props => <Search route="/" placeholder="Search by title or author"/>}
 			/>
 			<Route exact path="/"
 				render={props => (
