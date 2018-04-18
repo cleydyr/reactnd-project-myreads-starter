@@ -5,10 +5,7 @@ import {Link, Route} from 'react-router-dom'
 import './App.css'
 import Title from './components/Title';
 import BookContent from './components/BookContent';
-
-const CloseButton = props => (
-	<Link className="close-search" to={props.toPath}>Close</Link>
-);
+import SearchCloseButton from './components/SearchCloseButton'
 
 const SearchInput = props => (
 	<div className="search-books-input-wrapper">
@@ -27,7 +24,7 @@ const SearchInput = props => (
 const Search = props => (
 	<div className="search-books">
 		<div className="search-books-bar">
-			<CloseButton toPath={props.route} />
+			<SearchCloseButton toPath={props.route} />
 			<SearchInput onChange={props.onChange} value={props.query}/>
 		</div>
 		<div className="search-books-results">
