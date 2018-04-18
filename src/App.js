@@ -5,6 +5,42 @@ import Title from './components/Title';
 import Bookshelf from './components/Bookshelf';
 import BookContent from './components/BookContent';
 
+const CloseButton = props => (
+	<a className="close-search" onClick={props.onClose}>Close</a>
+);
+
+const SearchInput = props => (
+	<div className="search-books-input-wrapper">
+		{/*
+			NOTES: The search from BooksAPI is limited to a particular set of search terms.
+			You can find these search terms here:
+			https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md
+
+			However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
+			you don't find a specific author or title. Every search is limited by search terms.
+		*/}
+		<input type="text" placeholder="Search by title or author" onChange={props.onChange} value={props.query} />
+	</div>
+);
+
+const Search = props => (
+	<div className="search-books">
+		<div className="search-books-bar">
+			<CloseButton onClose={props.onClose}/>
+			<SearchInput onChange={props.onChange} value={props.query}/>
+		</div>
+		<div className="search-books-results">
+			<ol className="books-grid"></ol>
+		</div>
+	</div>
+);
+
+const SearchButton = props => (
+	<div className="open-search">
+		<a onClick={props.onClick}>Add a book</a>
+	</div>
+);
+
 class BooksApp extends React.Component {
   state = {
     /**
@@ -103,37 +139,20 @@ class BooksApp extends React.Component {
 	],
   }
 
+  componentDidMount() {
+
+  }
+
   render() {
     return (
       <div className="app">
         {this.state.showSearchPage ? (
-          <div className="search-books">
-            <div className="search-books-bar">
-              <a className="close-search" onClick={() => this.setState({ showSearchPage: false })}>Close</a>
-              <div className="search-books-input-wrapper">
-                {/*
-                  NOTES: The search from BooksAPI is limited to a particular set of search terms.
-                  You can find these search terms here:
-                  https://github.com/udacity/reactnd-project-myreads-starter/blob/master/SEARCH_TERMS.md
-
-                  However, remember that the BooksAPI.search method DOES search by title or author. So, don't worry if
-                  you don't find a specific author or title. Every search is limited by search terms.
-                */}
-                <input type="text" placeholder="Search by title or author"/>
-
-              </div>
-            </div>
-            <div className="search-books-results">
-              <ol className="books-grid"></ol>
-            </div>
-          </div>
+			<Search onClose={() => this.setState({ showSearchPage: false })} />
         ) : (
           <div className="list-books">
             <Title title="My Reads"/>
-            <BookContent bookshelves={[]} />
-            <div className="open-search">
-              <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
-            </div>
+            <BookContent bookshelves={this.state.bookshelves} />
+			<SearchButton onClick={() => this.setState({ showSearchPage: true })} />
           </div>
         )}
       </div>
