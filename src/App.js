@@ -4,6 +4,13 @@ import './App.css'
 import Title from './components/Title';
 import Bookshelf from './components/Bookshelf';
 
+const BookContent = props => (
+	<div className="list-books-content">
+        <div>
+			{props.bookshelfs.map(bookshelf => <Bookshelf title={bookshelf.title} books={bookshelf.books} key={bookshelf.title}/>)}
+        </div>
+    </div>
+);
 
 class BooksApp extends React.Component {
   state = {
@@ -130,11 +137,7 @@ class BooksApp extends React.Component {
         ) : (
           <div className="list-books">
             <Title title="My Reads"/>
-            <div className="list-books-content">
-              <div>
-				{this.state.bookshelfs.map(bookshelf => <Bookshelf title={bookshelf.title} books={bookshelf.books} key={bookshelf.title}/>)}
-              </div>
-            </div>
+            <BookContent bookshelfs={this.state.bookshelfs} />
             <div className="open-search">
               <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
             </div>
