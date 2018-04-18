@@ -3,14 +3,7 @@ import React from 'react'
 import './App.css'
 import Title from './components/Title';
 import Bookshelf from './components/Bookshelf';
-
-const BookContent = props => (
-	<div className="list-books-content">
-        <div>
-			{props.bookshelves.map(bookshelf => <Bookshelf title={bookshelf.title} books={bookshelf.books} key={bookshelf.title}/>)}
-        </div>
-    </div>
-);
+import BookContent from './components/BookContent';
 
 class BooksApp extends React.Component {
   state = {
@@ -137,7 +130,7 @@ class BooksApp extends React.Component {
         ) : (
           <div className="list-books">
             <Title title="My Reads"/>
-            <BookContent bookshelves={this.state.bookshelves} />
+            <BookContent bookshelves={[]} />
             <div className="open-search">
               <a onClick={() => this.setState({ showSearchPage: true })}>Add a book</a>
             </div>
