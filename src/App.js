@@ -6,21 +6,8 @@ import './App.css'
 
 import Title from './components/Title';
 import BookContent from './components/BookContent';
-import SearchCloseButton from './components/SearchCloseButton';
-import SearchInput from './components/SearchInput';
 import SearchButton from './components/SearchButton';
-
-const Search = props => (
-	<div className="search-books">
-		<div className="search-books-bar">
-			<SearchCloseButton toPath={props.route} />
-			<SearchInput placeholder={props.placeholder} onChange={props.onChange} value={props.query}/>
-		</div>
-		<div className="search-books-results">
-			<ol className="books-grid"></ol>
-		</div>
-	</div>
-);
+import Search from './components/Search';
 
 class BooksApp extends React.Component {
   state = {
