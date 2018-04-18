@@ -11,6 +11,7 @@ import Search from './components/Search';
 
 class BooksApp extends React.Component {
 	state = {
+		searchResults: [],
 		query: '',
 		bookshelves: [
 			{
