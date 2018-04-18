@@ -7,7 +7,7 @@ import Title from './components/Title';
 import BookContent from './components/BookContent';
 
 const CloseButton = props => (
-	<Link className="close-search" to="/">Close</Link>
+	<Link className="close-search" to={props.toPath}>Close</Link>
 );
 
 const SearchInput = props => (
@@ -27,7 +27,7 @@ const SearchInput = props => (
 const Search = props => (
 	<div className="search-books">
 		<div className="search-books-bar">
-			<CloseButton onClose={props.onClose}/>
+			<CloseButton toPath={props.route} onClose={props.onClose}/>
 			<SearchInput onChange={props.onChange} value={props.query}/>
 		</div>
 		<div className="search-books-results">
@@ -38,7 +38,7 @@ const Search = props => (
 
 const SearchButton = props => (
 	<div className="open-search">
-		<Link to="/search">{props.title}</Link>
+		<Link to={props.route}>{props.title}</Link>
 	</div>
 );
 
@@ -141,14 +141,14 @@ class BooksApp extends React.Component {
     return (
       <div className="app">
 			<Route exact path="/search"
-				render={props => <Search />}
+				render={props => <Search route="/"/>}
 			/>
 			<Route exact path="/"
 				render={props => (
 					<div className="list-books">
 						<Title title="My Reads"/>
 						<BookContent bookshelves={this.state.bookshelves} />
-						<SearchButton title="Add a book"/>
+						<SearchButton title="Add a book" route="/search"/>
 					</div>
 				)}
 			/>
