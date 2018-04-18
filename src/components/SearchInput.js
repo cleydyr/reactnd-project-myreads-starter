@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 import '../App.css';
 
-export default class SearchCloseButton extends Component {
+export default class SearchInput extends Component {
 	render() {
 		return (
 			<div className="search-books-input-wrapper">
