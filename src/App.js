@@ -8,6 +8,7 @@ import Title from './components/Title';
 import BookContent from './components/BookContent';
 import SearchCloseButton from './components/SearchCloseButton';
 import SearchInput from './components/SearchInput';
+import SearchButton from './components/SearchButton';
 
 const Search = props => (
 	<div className="search-books">
@@ -18,12 +19,6 @@ const Search = props => (
 		<div className="search-books-results">
 			<ol className="books-grid"></ol>
 		</div>
-	</div>
-);
-
-const SearchButton = props => (
-	<div className="open-search">
-		<Link to={props.route}>{props.title}</Link>
 	</div>
 );
 
