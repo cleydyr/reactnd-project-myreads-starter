@@ -148,7 +148,7 @@ class BooksApp extends React.Component {
 					<div className="list-books">
 						<Title title="My Reads"/>
 						<BookContent bookshelves={this.state.bookshelves} />
-						<SearchButton onClick={() => this.setState({ showSearchPage: true })} />
+						<SearchButton />
 					</div>
 				)}
 			/>
