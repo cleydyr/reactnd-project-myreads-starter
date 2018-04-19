@@ -106,6 +106,22 @@ class BooksApp extends React.Component {
 
 	}
 
+	handleBookshelfChange = (book) => (bookshelfId) => {
+		const bookshelves = this.state.bookshelves
+			.map(bookshelf => ({
+				...bookshelf,
+				books: bookshelf.books.filter(b => b.id == book.id),
+			}))
+			.map(bookshelf => ({
+				...bookshelf,
+				books: (bookshelf.id == bookshelfId) ? [book, ...books] : [...books],
+			}));
+
+		this.setState({
+			bookshelves,
+		});
+	}
+
 	handleQueryChange = (query) => {
 		if (query) {
 			BooksAPI.search(query)
