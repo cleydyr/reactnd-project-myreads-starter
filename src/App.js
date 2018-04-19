@@ -107,11 +107,32 @@ class BooksApp extends React.Component {
 	}
 
 	handleQueryChange = (query) => {
-		BooksAPI.search(query)
-			.then(searchResults => this.setState({
-				query,
-				searchResults,
-			}));
+		if (query) {
+			BooksAPI.search(query)
+				.then(searchResults => {
+					if (searchResults.error) {
+						this.setState({
+							query,
+							searchResults: [],
+						});
+					} else {
+						this.setState({
+							query,
+							searchResults,
+						});
+					}
+				})
+				.catch(
+					// TODO: handle rejection
+				);
+		} else {
+			this.setState(
+				{
+					query,
+					searchResults: [],
+				}
+			)
+		}
 	};
 
 	render() {
