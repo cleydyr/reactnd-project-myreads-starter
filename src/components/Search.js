@@ -17,12 +17,15 @@ export default class Search extends Component {
 				<div className="search-books-results">
 					<ol className="books-grid">
 						{
-							this.props.books.map(book => (
-								<BookItem
-									image={book.imageLinks.smallThumbnail}
-									style={{width: 128, height: 193}}
-									{...book}
-									key={book.id}/>))
+							this.props.books.length > 0 ?
+								this.props.books.map(book => (
+									<BookItem
+										image={book.imageLinks.smallThumbnail}
+										style={{width: 128, height: 193}}
+										{...book}
+										key={book.id}/>))
+								: <span>No results found!</span>
+
 						}
 					</ol>
 				</div>
