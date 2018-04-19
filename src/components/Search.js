@@ -25,7 +25,6 @@ export default class Search extends Component {
 										{...book}
 										key={book.id}/>))
 								: <span>No results found!</span>
-
 						}
 					</ol>
 				</div>
