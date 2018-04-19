@@ -114,7 +114,7 @@ class BooksApp extends React.Component {
 			}))
 			.map(bookshelf => ({
 				...bookshelf,
-				books: (bookshelf.id == bookshelfId) ? [book, ...books] : [...books],
+				books: (bookshelf.id == bookshelfId) ? [book, bookshelf.books] : [...bookshelf.books],
 			}));
 
 		this.setState({
