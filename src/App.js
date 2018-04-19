@@ -158,6 +158,7 @@ class BooksApp extends React.Component {
 							placeholder="Search by title or author"
 							query={this.state.query}
 							onChange={this.handleQueryChange}
+							onAddBook={this.handleBookshelfChange}
 							books={this.state.searchResults}
 						/>
 					}
@@ -166,7 +167,9 @@ class BooksApp extends React.Component {
 					render={props => (
 						<div className="list-books">
 							<Title title="My Reads"/>
-							<BookContent bookshelves={this.state.bookshelves} />
+							<BookContent
+								bookshelves={this.state.bookshelves}
+								onBookshelfChange={this.onBookshelfChange}/>
 							<SearchButton title="Add a book" route="/search"/>
 						</div>
 					)}
