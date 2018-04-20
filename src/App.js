@@ -42,7 +42,7 @@ class BooksApp extends React.Component {
 				...bookshelf,
 				books: (bookshelf.id === bookshelfId)
 					? [book, ...bookshelf.books]
-					: bookshelf.books.filter(b => b.id === book.id),
+					: bookshelf.books.filter(b => b.id !== book.id),
 			}));
 
 		this.setState({
