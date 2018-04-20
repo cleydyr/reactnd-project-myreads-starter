@@ -10,7 +10,15 @@ export default class Bookshelf extends Component {
 				<div className="bookshelf-books">
 					<ol className="books-grid">
 						{
-							this.props.books.map(book => (<BookItem {...book} key={book.id}/>))
+							this.props.books.map(book => (
+								<BookItem
+									onBookshelfChange={this.props.onBookshelfChange(book)}
+									current={this.props.id}
+									image={book.imageLinks.smallThumbnail}
+									{...book}
+									key={book.id}
+								/>
+							))
 						}
 					</ol>
 				</div>

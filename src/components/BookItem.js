@@ -13,7 +13,7 @@ export default class BookItem extends Component {
 						<div className="book-cover" style={{backgroundImage : `url(${this.props.image})`, ...this.props.style}}></div>
 						<BookshelfChanger
 							current={this.props.currentBookshelf}
-							onChange={({target}) => this.props.onChange(target.value)}
+							onChange={({target}) => this.props.onBookshelfChange(target.value)}
 						/>
 					</div>
 					<div className="book-title">{this.props.title}</div>

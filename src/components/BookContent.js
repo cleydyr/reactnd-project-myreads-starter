@@ -8,7 +8,13 @@ export default class BookContent extends Component {
 			<div className="list-books-content">
 				<div>
 					{this.props.bookshelves.map(
-						bookshelf => <Bookshelf title={bookshelf.title} books={bookshelf.books} key={bookshelf.title}/>
+						bookshelf =>
+							<Bookshelf
+								title={bookshelf.title}
+								id={bookshelf.id}
+								books={bookshelf.books}
+								key={bookshelf.id}
+								onBookshelfChange={this.props.onBookshelfChange} />
 					)}
 				</div>
 			</div>

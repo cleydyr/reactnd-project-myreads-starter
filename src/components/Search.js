@@ -20,6 +20,7 @@ export default class Search extends Component {
 							this.props.books.length > 0 ?
 								this.props.books.map(book => (
 									<BookItem
+										onBookshelfChange={this.props.onAddBook(book)}
 										image={book.imageLinks.smallThumbnail}
 										style={{width: 128, height: 193}}
 										{...book}
