@@ -41,8 +41,8 @@ class BooksApp extends React.Component {
 			.map(bookshelf => ({
 				...bookshelf,
 				books: (bookshelf.id === bookshelfId)
-					? [book, bookshelf.books]
-					: bookshelf.books.filter(b => b.id == book.id),
+					? [book, ...bookshelf.books]
+					: bookshelf.books.filter(b => b.id === book.id),
 			}));
 
 		this.setState({
