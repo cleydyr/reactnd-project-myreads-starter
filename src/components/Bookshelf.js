@@ -13,7 +13,7 @@ export default class Bookshelf extends Component {
 							this.props.books.map(book => (
 								<BookItem
 									onBookshelfChange={this.props.onBookshelfChange(book)}
-									current={this.props.id}
+									currentBookshelf={this.props.id}
 									image={book.imageLinks.smallThumbnail}
 									style={{width: 128, height: 193}}
 									{...book}
