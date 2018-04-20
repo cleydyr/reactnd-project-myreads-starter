@@ -15,6 +15,7 @@ export default class Bookshelf extends Component {
 									onBookshelfChange={this.props.onBookshelfChange(book)}
 									current={this.props.id}
 									image={book.imageLinks.smallThumbnail}
+									style={{width: 128, height: 193}}
 									{...book}
 									key={book.id}
 								/>
