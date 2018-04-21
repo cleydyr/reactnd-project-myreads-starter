@@ -97,6 +97,7 @@ class BooksApp extends React.Component {
 							<Title title="My Reads"/>
 							<BookContent
 								bookshelves={this.state.bookshelves}
+								books={this.state.books}
 								onBookshelfChange={this.handleBookshelfChange}/>
 							<SearchButton title="Add a book" route="/search"/>
 						</div>

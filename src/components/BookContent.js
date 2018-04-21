@@ -12,7 +12,7 @@ export default class BookContent extends Component {
 							<Bookshelf
 								title={bookshelf.title}
 								id={bookshelf.id}
-								books={bookshelf.books}
+								books={this.props.books.filter(book => book.bookshelfId === bookshelf.id)}
 								key={bookshelf.id}
 								onBookshelfChange={this.props.onBookshelfChange} />
 					)}
