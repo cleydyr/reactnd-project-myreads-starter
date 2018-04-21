@@ -18,16 +18,13 @@ class BooksApp extends React.Component {
 			{
 				id: 'currentlyReading',
 				title: 'Currently Reading',
-				books: [],
 			},
 			{
 				id: 'wantToRead',
-				books: [],
 				title: "Want to Read",
 			},
 			{
 				id: 'read',
-				books: [],
 				title: "Read",
 			}
 		],
