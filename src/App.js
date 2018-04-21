@@ -86,7 +86,8 @@ class BooksApp extends React.Component {
 							query={this.state.query}
 							onChange={this.handleQueryChange}
 							onAddBook={this.handleBookshelfChange}
-							books={this.state.searchResults}
+							results={this.state.searchResults}
+							books={this.state.books}
 						/>
 					}
 				/>

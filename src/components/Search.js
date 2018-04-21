@@ -17,14 +17,19 @@ export default class Search extends Component {
 				<div className="search-books-results">
 					<ol className="books-grid">
 						{
-							this.props.books.length > 0 ?
-								this.props.books.map(book => (
-									<BookItem
-										onBookshelfChange={this.props.onAddBook(book)}
-										image={book.imageLinks.smallThumbnail}
-										style={{width: 128, height: 193}}
-										{...book}
-										key={book.id}/>))
+							this.props.results.length > 0 ?
+								this.props.results.map(result => {
+									const [existingBook] = this.props.books.filter(existingBook => existingBook.id === result.id);
+									return (
+										<BookItem
+											currentBookshelf={existingBook ? existingBook.bookshelfId : 'none'}
+											onBookshelfChange={this.props.onAddBook(result)}
+											image={result.imageLinks.smallThumbnail}
+											style={{width: 128, height: 193}}
+											{...result}
+											key={result.id}
+										/>)
+								})
 								: <span>No results found!</span>
 						}
 					</ol>
