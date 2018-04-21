@@ -10,7 +10,7 @@ import SearchButton from './components/SearchButton';
 import Search from './components/Search';
 
 class BooksApp extends React.Component {
-	state = {
+	state = (localStorage.myreads && JSON.parse(localStorage.myreads)) || {
 		searchResults: [],
 		query: '',
 		bookshelves: [
@@ -32,8 +32,8 @@ class BooksApp extends React.Component {
 		],
 	}
 
-	componentDidMount() {
-
+	componentDidUpdate() {
+		localStorage.myreads = JSON.stringify(this.state);
 	}
 
 	handleBookshelfChange = (book) => (bookshelfId) => {
