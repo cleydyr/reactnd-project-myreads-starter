@@ -13,6 +13,7 @@ class BooksApp extends React.Component {
 	state = (localStorage.myreads && JSON.parse(localStorage.myreads)) || {
 		searchResults: [],
 		query: '',
+		books: [],
 		bookshelves: [
 			{
 				id: 'currentlyReading',
