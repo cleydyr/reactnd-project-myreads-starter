@@ -35,17 +35,16 @@ class BooksApp extends React.Component {
 	}
 
 	handleBookshelfChange = (book) => (bookshelfId) => {
-		const bookshelves = this.state.bookshelves
-			.map(bookshelf => ({
-				...bookshelf,
-				books: (bookshelf.id === bookshelfId)
-					? [book, ...bookshelf.books]
-					: bookshelf.books.filter(b => b.id !== book.id),
-			}));
+		const newBook = {
+			...book,
+			bookshelfId,
+		};
 
-		this.setState({
-			bookshelves,
-		});
+		this.setState(({books}) => ({
+			books: books.some(curBook => curBook.id === book.id)
+				? books.map(curBook => curBook.id === book.id ? newBook : curBook)
+				: [newBook, ...books],
+		}));
 	}
 
 	handleQueryChange = (query) => {
