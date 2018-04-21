@@ -24,7 +24,7 @@ export default class Search extends Component {
 										<BookItem
 											currentBookshelf={existingBook ? existingBook.bookshelfId : 'none'}
 											onBookshelfChange={this.props.onAddBook(result)}
-											image={result.imageLinks.smallThumbnail}
+											image={result.imageLinks ? result.imageLinks.smallThumbnail : 'images/not_available.jpg'}
 											style={{width: 128, height: 193}}
 											{...result}
 											key={result.id}
