@@ -92,16 +92,19 @@ class BooksApp extends React.Component {
 					}
 				/>
 				<Route exact path="/"
-					render={props => (
-						<div className="list-books">
-							<Title title="My Reads"/>
-							<BookContent
-								bookshelves={this.state.bookshelves}
-								books={this.state.books}
-								onBookshelfChange={this.handleBookshelfChange}/>
-							<SearchButton title="Add a book" route="/search"/>
-						</div>
-					)}
+					render={props => {
+						this.state.query && this.setState({query: '', searchResults: [],});
+						return (
+							<div className="list-books">
+								<Title title="My Reads"/>
+								<BookContent
+									bookshelves={this.state.bookshelves}
+									books={this.state.books}
+									onBookshelfChange={this.handleBookshelfChange}/>
+								<SearchButton title="Add a book" route="/search"/>
+							</div>
+						);
+					}}
 				/>
 		</div>
 		)
